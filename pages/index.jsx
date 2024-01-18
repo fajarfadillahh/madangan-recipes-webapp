@@ -24,7 +24,12 @@ export default function Home({ recipes }) {
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-x-8 gap-y-4">
           {recipes.map((recipe, index) => (
-            <Card key={index} img={recipe.image} text={recipe.name} />
+            <Card
+              key={index}
+              path={`/details/${recipe.id}`}
+              img={recipe.image}
+              text={recipe.name}
+            />
           ))}
         </div>
       </section>

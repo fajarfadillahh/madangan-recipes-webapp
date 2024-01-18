@@ -1,8 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Card({ img, text }) {
+export default function Card({ path, img, text }) {
   return (
-    <div className="group relative h-[180px] overflow-hidden rounded-xl shadow-lg hover:cursor-pointer">
+    <Link
+      href={`${path}`}
+      className="group relative h-[180px] overflow-hidden rounded-xl shadow-lg hover:cursor-pointer"
+    >
       <Image
         src={img}
         alt="img"
@@ -17,6 +21,6 @@ export default function Card({ img, text }) {
           {text}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
